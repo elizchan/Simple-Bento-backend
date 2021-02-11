@@ -24,6 +24,8 @@ exports.addRecipe = (req, res) => {
     })
 }
 
+//display all recipes
+
 //edit recipes
 
 //delete recipe
