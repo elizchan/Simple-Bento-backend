@@ -9,3 +9,6 @@ const Menu = db.menu;
 // }
 
 //edit menu
+//exports.editMenu = (req, res) => {}
+
+//delete menu
