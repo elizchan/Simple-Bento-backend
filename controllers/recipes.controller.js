@@ -10,7 +10,7 @@ exports.addRecipe = (req, res) => {
     const recipe = new Recipe({
         name,
         description,
-        recipe
+        dietary
     });
     recipe.save((err, recipe)=>{
         if(err){
@@ -26,15 +26,38 @@ exports.addRecipe = (req, res) => {
 
 //display all recipes
 exports.displayRecipes = (req, res) => {
+    Recipe.find({})
 
 }
 
 //edit recipes
 exports.editRecipe = (req, res) => {
+    const id = req.params.id;
+    const name = req.body.name;
+    const description = req.body.description;
+    const dietary = req.body.dietary;
+    Recipe.findByIdAndUpdate(id, {name: name, description: description, dietary: dietary})
+    .then(data=>{
+        res.send(data)
+    })
+    .catch(err=>{
+        res.status(500).send({
+            message:
+                err.message || "some error occurred while trying to update the recipe"
+        })
+    })
 
 }
 
 //delete recipe
 exports.deleteRecipe = (req, res) => {
-    
+    const id = req.params.id
+    // Recipe.findByIdAndDelete()
+    Recipe.findByIdAndRemove(id, {useFindAndModify: false})
+    .then(data=>{
+        res.status(200).send(data)
+    })
+    .catch(err=>{
+        console.log(err)
+    })
 }

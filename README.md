@@ -13,11 +13,13 @@
 ## Routes
 |ROUTE |CRUD  |URL           |DESCRIPTION                          |
 |------|------|--------------|-------------------------------------|
-| GET | READ | "/api/" | get the menu  |
+| GET | READ | "/api/menu" | get the menu  |
 | PUT | UPDATE | "/api/" | update the menu|
 | POST | CREATE | "/api/" | create the menu|
 | DELETE | DELETE | "/api/" | remove a recipe from the menu |
-| GET | READ | "/api/" | get all the recipes |
-| PUT | UPDATE | "/api/" | update a specific recipe |
-| POST | CREATE | "/api/" | submit a new recipe |
-| DELETE | DELETE | "/api/" | delete a specific recipe|
+| GET | READ | "/api/recipe" | get all the recipes |
+| PUT | UPDATE | "/api/recipe/:id" | update a specific recipe |
+| POST | CREATE | "/api/recipe" | submit a new recipe |
+| DELETE | DELETE | "/api/recipe/:id" | delete a specific recipe|
+
+## Challenges
