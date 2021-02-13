@@ -7,10 +7,12 @@ exports.addRecipe = (req, res) => {
     const name = req.body.name;
     const description = req.body.description;
     const dietary = req.body.dietary;
+    const photo = req.body.photo;
     const recipe = new Recipe({
         name,
         description,
-        dietary
+        dietary,
+        photo
     });
     recipe.save((err, recipe)=>{
         if(err){
@@ -27,7 +29,6 @@ exports.addRecipe = (req, res) => {
 //display all recipes
 exports.displayRecipes = (req, res) => {
     Recipe.find({})
-
 }
 
 //edit recipes
@@ -46,7 +47,6 @@ exports.editRecipe = (req, res) => {
                 err.message || "some error occurred while trying to update the recipe"
         })
     })
-
 }
 
 //delete recipe

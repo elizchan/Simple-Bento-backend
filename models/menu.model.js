@@ -9,7 +9,8 @@ const Menu = mongoose.model(
                 type: mongoose.Schema.Types.ObjectId,
                 ref: "Recipe"
             }
-        ]
+        ],
+        price: String
     })
 )
 
