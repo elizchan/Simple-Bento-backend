@@ -10,7 +10,8 @@ const Menu = mongoose.model(
                 ref: "Recipe"
             }
         ],
-        price: String
+        price: String,
+        date: String
     })
 )
 
