@@ -17,7 +17,7 @@ I decided to approach this from the restaurant owner perspective first. I will a
 |------|------|--------------|-------------------------------------|
 | GET | READ | "/api/menu" | get the menu  |
 | PUT | UPDATE | "/api/menu/:id" | update the menu|
-| POST | CREATE | "/api/menu/:id" | create the menu|
+| POST | CREATE | "/api/menu" | create the menu|
 | DELETE | DELETE | "/api/menu/:id" | remove a recipe from the menu |
 | GET | READ | "/api/recipes" | get all the recipes |
 | PUT | UPDATE | "/api/recipes/:id" | update a specific recipe |
