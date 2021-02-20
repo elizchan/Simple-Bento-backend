@@ -39,6 +39,19 @@ exports.displayRecipes = (req, res) => {
         );
     })
 }
+//get one recipe
+exports.getRecipe = (req, res) => {
+    // const id = req.params.id
+    console.log(req)
+    Recipe.findOne({_id: req.params.id})
+    .then(data=> {
+        res.send(data)
+        console.log(data)
+    })
+    .catch(err=>{
+        res.send(err)
+    })
+}
 
 //edit recipes
 exports.editRecipe = (req, res) => {
@@ -64,6 +77,7 @@ exports.deleteRecipe = (req, res) => {
     // Recipe.findByIdAndDelete()
     Recipe.findByIdAndRemove(id, {useFindAndModify: false})
     .then(data=>{
+        console.log(data)
         res.status(200).send(data)
     })
     .catch(err=>{
