@@ -5,7 +5,13 @@ const Menu = db.menu;
 
 //display menu from mm/dd/yy-mm/dd/yy
 exports.displayMenu = (req, res) => {
-    Menu.find()
+    Menu.find({})
+    .then(data=>{
+        res.send(data)
+    })
+    .catch(err=>{
+        res.send(err)
+    })
 }
 //add Menu
 exports.addMenu = (req, res) => {

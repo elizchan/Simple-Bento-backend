@@ -4,6 +4,7 @@ const Recipe = db.recipe;
 
 //add recipe to list of available recipes
 exports.addRecipe = (req, res) => {
+    // console.log(req)
     const name = req.body.name;
     const description = req.body.description;
     const dietary = req.body.dietary;
@@ -29,6 +30,14 @@ exports.addRecipe = (req, res) => {
 //display all recipes
 exports.displayRecipes = (req, res) => {
     Recipe.find({})
+    .then(data=>{
+        res.send(data)
+    })
+    .catch(err=>{
+        res.send(
+            "cannot get recipes"
+        );
+    })
 }
 
 //edit recipes
