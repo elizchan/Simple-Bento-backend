@@ -15,6 +15,7 @@ I decided to approach this from the restaurant owner perspective first. I will a
 ## Routes
 |ROUTE |CRUD  |URL           |DESCRIPTION                          |
 |------|------|--------------|-------------------------------------|
+| POST | CREATE| "/auth/signup" | create new user|
 | GET | READ | "/api/menu" | get the menu  |
 | PUT | UPDATE | "/api/menu/:id" | update the menu|
 | POST | CREATE | "/api/menu" | create the menu|
@@ -25,3 +26,4 @@ I decided to approach this from the restaurant owner perspective first. I will a
 | DELETE | DELETE | "/api/recipes/:id" | delete a specific recipe|
 
 ## Challenges
+* separating out admin routes from user routes
